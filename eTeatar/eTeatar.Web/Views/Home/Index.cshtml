@@ -1,0 +1,83 @@
+﻿@{ViewData["Title"] = "eTeatar";}
+@model eTeatar.Web.ViewModels.Home.IndexVM;
+
+@if (Model.IsLoggedIn) { Layout = "_LayoutAnonymus"; }
+else { Layout = "_LayoutLoggedIn"; }
+
+<div id="PredstaveDiv">
+    <div class="Naslov">PREDSTAVE</div>
+
+    <div id="Predstave">
+
+        @for (int i = 1; i < 4; i++)
+        {
+            <div id="@("Predstava"+i)" class="Predstava grow btn" style="background-image: url('@Model.Predstave[i-1].SlikaLink')" onclick="Redirect('Predstave/Detalji/@Model.Predstave[i-1].Id')">
+                <div class="PredstavaOverlay">
+                    <div class="PredstavaNaslov">@Model.Predstave[i - 1].Naslov</div>
+                    <div class="PredstavaZanrovi">@Model.Predstave[i - 1].Zanrovi</div>
+                </div>
+            </div>
+        }
+
+    </div>
+
+    <div onclick="Redirect('/Predstave')" id="DugmeDiv">
+        <div id="Dugme">Prikazi sve</div>
+    </div>
+</div>
+
+<img id="Kalendar-Background" src="~/images/Kalendar-Background.svg"> <div id="KalendarDiv">
+
+    <div id="KalendarNaslov" class="Naslov">KALENDAR</div>
+    
+    <div id="Kalendar">
+        <div id="KalendarHeader">Broj predstava u nasim teatrima</div>
+        <div id="KalendarDani">
+            <div>Pon</div>
+            <div>Uto</div>
+            <div>Sri</div>
+            <div>Cet</div>
+            <div>Pet</div>
+            <div>Sub</div>
+            <div>Ned</div>
+        </div>
+
+        <div id="KalendarCelije">
+
+            @foreach (var Celija in Model.KalendarCelije)
+            {
+                <div class="KalendarCelija">
+                    <div>@Celija.Datum</div>
+                    <div class="KalendarCelijaBroj">@Celija.BrojPredstava</div>
+                </div>
+            }
+
+        </div>
+    </div>
+
+    <div id="NovostiDiv">
+        <div class="Naslov">NOVOSTI</div>
+
+        <div id="Novosti">
+
+            <div id="GlavnaNovost" class="btn grow-small" onclick="Redirect('/Novosti/Detalji/@Model.GlavnaNovost.Id')">
+                <div class="GlavnaNovostOverlay">
+                    <div class="NovostNaslov">@Model.GlavnaNovost.Naslov</div>
+                    <div class="GlavnaNovostOpis">@Model.GlavnaNovost.GlavnaNovostOpis</div>
+                </div>
+            </div>
+
+            <div id="OstaleNovosti">
+                @for (int i = 1; i < 5; i++)
+                {
+                    <div id="@("Novost"+i)" class="SporednaNovost btn grow-small" onclick="Redirect('/Novosti/Detalji/@Model.SporedneNovosti[i-1].Id')">
+                        <div class="SporednaNovostOverlay">
+                            <div class="NovostNaslov">@Model.SporedneNovosti[i - 1].Naslov</div>
+                        </div>
+                    </div>
+                }
+            </div>
+
+        </div>
+
+    </div>

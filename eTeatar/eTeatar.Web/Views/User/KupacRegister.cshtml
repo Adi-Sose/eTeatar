@@ -1,0 +1,72 @@
+﻿@{
+    Layout = "_LayoutLoginRegister";
+}
+
+@model eTeatar.Web.ViewModels.User.KupacRegisterVM
+
+<form asp-controller="User" asp-action="KupacRegister" method="POST">
+    <div id="LoginContentWrapper">
+        <div id="LoginContent" style="margin-bottom:0; row-gap:1.5vh;">
+
+
+            <div style="text-align: center" class="btn" onclick="Redirect('/')">
+                <img id="LoginRegisterLogo" src="/images/Header-Logo-Image.svg">
+                <div id="LogineRegisterLogoText">eTeatar</div>
+            </div>
+
+                <div class="LoginContentDiv Splitted">
+                    <div>
+                        <input asp-for="Ime" class="LoginContentDivInput" placeholder="Ime *">
+                        <span asp-validation-for="Ime" class="LoginContentDivError"></span>
+                    </div>
+                    <div>
+                        <input asp-for="Prezime" class="LoginContentDivInput" placeholder="Prezime *">
+                        <span asp-validation-for="Prezime" class="LoginContentDivError"></span>
+                    </div>
+                </div>
+
+
+                <div class="LoginContentDiv">
+                    <input asp-for="Username" class="LoginContentDivInput" placeholder="Username *">
+                    <span asp-validation-for="Username" class="LoginContentDivError"></span>
+                </div>
+
+                <div class="LoginContentDiv">
+                    <input asp-for="Email" class="LoginContentDivInput" placeholder="Email *">
+                    <span asp-validation-for="Email" class="LoginContentDivError"></span>
+                </div>
+
+                <div class="LoginContentDiv">
+                    <input asp-for="Password" class="LoginContentDivInput" placeholder="Password *">
+                    <span asp-validation-for="Password" class="LoginContentDivError"></span>
+                </div>
+
+                <div class="LoginContentDiv">
+                    <input asp-for="ConfirmPassword" class="LoginContentDivInput" placeholder="Password *">
+                    <span asp-validation-for="ConfirmPassword" class="LoginContentDivError"></span>
+                </div>
+
+                <div class="LoginContentDiv">
+                    <Select class="LoginContentDivInput" asp-for="GradId" asp-items="@Model.Gradovi" style="width:100%"></Select>
+                </div>
+
+                <div class="LoginContentDiv Splitted" style="grid-template-columns:20% 74%;">
+                    <div>
+                        <input asp-for="PozivniBroj" class="LoginContentDivInput" value="387" readonly>
+                    </div>
+                    <div style="display:grid;">
+                        <input asp-for="BrojTelefona" type="text" class="LoginContentDivInput" placeholder="Broj Telefona">
+                        <span asp-validation-for="BrojTelefona" class="LoginContentDivError" style="justify-self:center; margin-left:15%;" ></span>
+                    </div>
+                </div>
+
+                <div id="LoginContentDugmad" style="grid-template-columns: 100%; margin-top:1vh;">
+                    <input class="LoginContentDugmeDiv btn" type="submit" value="Register" style="border:0;">
+                </div>
+
+                <div id="VecImamNalog" class="btn" onclick="Redirect('/Login')">
+                    Već imam nalog
+                </div>
+            </div>
+        </div>
+</form>

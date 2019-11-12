@@ -1,0 +1,39 @@
+﻿@model eTeatar.Web.ViewModels.Predstave.IndexAjaxVM;
+
+    <div id="ContentRight">
+
+            @foreach (var Predstava in Model.Predstave)
+            {
+                <div class="ContentRightPredstava">
+
+                    <div id="ContentRightPredstavaImage" style="background-image: url('@Predstava.SlikaLink')"></div>
+                    <div id="ContentRightPredstavaDetalji">
+
+                        <div id="ContentRightPredstavaNaslov">@Predstava.Naziv</div>
+                        <img id="ContentRightPredstavaOcjena" src="/images/@Predstava.OcjenaLink" alt="Predstava jos nije ocijenjena">
+
+                        <div id="ContentRightPredstavaOpis">
+                            <div class="ContentRightPredstavaDetaljiNaslov">Opis: </div>
+                            <div class="ContentRightPredstavaDetaljiText">@Predstava.Opis</div>
+                        </div>
+
+                        <div id="ContentRightPredstavaDetaljiBottom">
+                            <div class="ContentRightPredstavaZanroviGlumci">
+                                <div class="ContentRightPredstavaDetaljiNaslov">Zanrovi:</div>
+                                <div class="ContentRightPredstavaDetaljiText">@Predstava.Zanrovi</div>
+                            </div>
+
+                            <div class="ContentRightPredstavaZanroviGlumci">
+                                <div class="ContentRightPredstavaDetaljiNaslov">Glavna uloga:</div>
+                                <div class="ContentRightPredstavaDetaljiText">@Predstava.GlavnaUloga</div>
+                            </div>
+                        </div>
+
+                        <div id="ContentRightPredstavaDugmeDiv" class="btn" onclick="Redirect('/Predstave/Detalji/@Predstava.Id')">
+                            <div id="ContentRightPredstavaDugme">Detalji</div>
+                        </div>
+                    </div>
+
+                </div>
+            }
+        </div>

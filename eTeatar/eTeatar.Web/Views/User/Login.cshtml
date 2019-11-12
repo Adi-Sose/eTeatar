@@ -1,0 +1,36 @@
+﻿@{ 
+    Layout = "_LayoutLoginRegister";
+}
+
+@model eTeatar.Web.ViewModels.User.UserLoginVM
+
+<form asp-controller="User" asp-action="LogIn" method="POST">
+
+    <div id="LoginContentWrapper">
+        <div id="LoginContent">
+
+            <div style="text-align: center" class="btn" onclick="Redirect('/')">
+                <img id="LoginRegisterLogo" src="/images/Header-Logo-Image.svg">
+                <div id="LogineRegisterLogoText">eTeatar</div>
+            </div>
+            <div class="LoginContentDiv">
+                <input asp-for="Username" class="LoginContentDivInput" type="text" placeholder="Username">
+                <span asp-validation-for="Username" class="LoginContentDivError"></span>
+            </div>
+
+            <div class="LoginContentDiv">
+                <input asp-for="Password" class="LoginContentDivInput" type="password" placeholder="Password">
+                <span asp-validation-for="Password" class="LoginContentDivError"></span>
+            </div>
+
+            <div id="LoginContentDugmad" style="margin-top: 1vh;">
+                <input id="LoginContentDugmeDivLogin" class="LoginContentDugmeDiv btn" style="border:0;" value="Login" type="submit">
+                <div class="LoginContentDugmeDiv btn" onclick="Redirect('/Register')">Register</div>
+            </div>
+
+            <span class="LoginContentDivError"> @Model.Error </span>
+
+        </div>
+    </div>
+
+</form>

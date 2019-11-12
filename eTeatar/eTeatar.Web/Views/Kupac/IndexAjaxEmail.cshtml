@@ -1,0 +1,12 @@
+﻿@model eTeatar.Web.ViewModels.Kupac.IndexAjaxEmailVM;
+
+@{
+    Layout = "";
+}
+
+<form asp-action="UpdateEmail" asp-controller="Kupac" method="post">
+    <div id="NoviEmailWrapper">
+            <input asp-for="Email" class="LoginContentDivInput"/>
+        <input id="OdabirAvataraSubmit" type="submit" value="Spasi" class="btn">
+    </div>
+</form>

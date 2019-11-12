@@ -1,0 +1,143 @@
+﻿@{ViewData["Title"] = "eTeatar";}
+@model eTeatar.Web.ViewModels.Kupac.IndexVM;
+
+@{
+    Layout = "_LayoutLoggedIn";
+}
+
+<div id="MojProfilWrapper">
+    <div id="MojProfil">
+        <div id="MojProfilSlika" style="background-image:url('@Model.Avatar')">
+            <div id="MojProfilSlikaOverlay" class="btn" onclick="UcitajAjax(@Model.AvatarId)">
+                <img id="MojProfilSlikaOverlayKamera" src="/images/Union 2.png">
+            </div>
+        </div>
+
+
+        <div id="MojProfilDetalji">
+            <div class="MojProfilDetaljiNaslov">Ime: </div>
+
+
+            <div style="width:100%;">
+                <div class="MojProfilDetaljiText">@Model.Ime @Model.Prezime</div>
+            </div>
+
+
+            <div class="MojProfilDetaljiNaslov">Email: </div>
+            <div style="width:100%;">
+                <div class="MojProfilDetaljiText">@Model.Email</div>
+                <img class="MojProfilDetaljiEdit btn" src="/images/pencil.png" onclick="UcitajAjaxEmail()">
+            </div>
+
+            <div class="MojProfilDetaljiNaslov">Username: </div>
+            <div style="width:100%;">
+                <div class="MojProfilDetaljiText">@Model.UserName</div>
+            </div>
+
+            <div class="MojProfilDetaljiNaslov">Pretplata: </div>
+            <div style="width:100%;">
+                <div class="MojProfilDetaljiText">@Model.TipKorisnika</div>
+
+                @if (Model.IduciTipKorisnikaId != null)
+                {
+                    <form asp-controller="Kupac" asp-action="UpgradeCheckout" method="post">
+                        <input type="hidden" asp-for="IduciTipKorisnikaId" />
+                        <input type="submit" id="MojProfilUpgradeDugme" value="@Model.IduciTipKorisnika" class="btn">
+                    </form>
+                }
+            </div>
+
+        </div>
+
+    </div>
+
+    <div class="Naslov">NARUDZBE</div>
+
+    <div id="MojProfilNarudzbeTabela">
+
+        <div id="MojProfilNarudzbeTabelaHeader" class="MojProfilNarudzbeTabelaRed">
+            <div>Predstava</div>
+            <div>Datum</div>
+            <div>Vrijeme</div>
+            <div>Teatar</div>
+            <div>Dvorana</div>
+            <div>Sjediste</div>
+            <div>Br. Karata</div>
+            <div>Cijena</div>
+            <div>Ocjena</div>
+        </div>
+
+        @for (int i = 0; i < Model.Narudzbe.Count(); i++)
+        {
+            <div class="MojProfilNarudzbeTabelaRed">
+                <div>@Model.Narudzbe[i].Predstava</div>
+                <div>@Model.Narudzbe[i].Datum</div>
+                <div>@Model.Narudzbe[i].Vrijeme</div>
+                <div>@Model.Narudzbe[i].Teatar</div>
+                <div>@Model.Narudzbe[i].Dvorana</div>
+                <div>@Model.Narudzbe[i].Sjediste</div>
+                <div>@Model.Narudzbe[i].BrKarata</div>
+                <div>@Model.Narudzbe[i].Cijena</div>
+                <div>
+                    <div>
+                        @if (Model.Narudzbe[i].Ocjena == null)
+                        {
+                            <form id="Forma @i" asp-controller="Kupac" asp-action="DodajOcjenu" method="Post">
+                                <fieldset class="rating">
+                                    <input type="hidden" name="NarudzbaId" value="@Model.Narudzbe[i].Id" />
+                                    <input type="radio" id="star5 @i" name="Ocjena" value="5" /><label class="full btn" for="star5 @i" onclick="SubmitFormu(@i,5)"></label>
+                                    <input type="radio" id="star4 @i" name="Ocjena" value="4" /><label class="full btn" for="star4 @i" onclick="SubmitFormu(@i,4)"></label>
+                                    <input type="radio" id="star3 @i" name="Ocjena" value="3" /><label class="full btn" for="star3 @i" onclick="SubmitFormu(@i,3)"></label>
+                                    <input type="radio" id="star2 @i" name="Ocjena" value="2" /><label class="full btn" for="star2 @i" onclick="SubmitFormu(@i,2)"></label>
+                                    <input type="radio" id="star1 @i" name="Ocjena" value="1" /><label class="full btn" for="star1 @i" onclick="SubmitFormu(@i,1)"></label>
+                                </fieldset>
+                            </form>
+                        }
+                        else
+                        {
+                            <fieldset class="givenRating">
+                                @for (int j = 0; j < 5 - Model.Narudzbe[i].Ocjena; j++)
+                                {
+                                    <label id="notGivenStar"></label>
+                                }
+
+                                @for (int j = 0; j < Model.Narudzbe[i].Ocjena; j++)
+                                {
+                                    <label id="givenStar"></label>
+                                }
+                            </fieldset>
+                        }
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+
+</div>
+
+<div id="ajaxDiv">
+</div>
+
+<script>
+    function SubmitFormu(i, j) {
+        var FormaId = "Forma " + i
+        document.getElementById("star" + j + " " + i).checked = true;
+        document.getElementById(FormaId).submit();
+    }
+
+
+    function UcitajAjax(trenutni) {
+        $.get("/Ajax/Kupac/Avatari/" + trenutni,
+            function (rezultat) {
+                $("#ajaxDiv").html(rezultat);
+            });
+    }
+
+    function UcitajAjaxEmail() {
+        $.get("/Ajax/Kupac/Email",
+            function (rezultat) {
+                $("#ajaxDiv").html(rezultat);
+            });
+    }
+    
+</script>

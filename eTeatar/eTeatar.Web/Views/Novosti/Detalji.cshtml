@@ -1,0 +1,38 @@
+﻿@{ViewData["Title"] = "eTeatar";}
+@model eTeatar.Web.ViewModels.Novosti.DetaljiVM;
+
+@if (Model.IsLoggedIn) { Layout = "_LayoutAnonymus"; }
+else { Layout = "_LayoutLoggedIn"; }
+
+<div id="NovostDetaljiWrapper">
+    <div id="NovostDetaljiSlika"></div>
+    <div id="NovostDetaljiNaslov">@Model.Naziv</div>
+    <div id="NovostDetaljiText">@Model.Sadrzaj</div>
+    <div class="Naslov">KOMENTARI</div>
+
+    @if (!Model.IsLoggedIn) { 
+    <div id="NovostDetaljiOstaviKomentar" class="NovostDetaljiKomentar">
+        <img class="NovostDetaljiKomentarSlika" src="@Model.MojAvatar">
+        <div class="NovostDetaljiKomentarDetalji">
+            <div class="NovostDetaljiKomentarDetaljiUsername">Ostavi komentar:</div>
+            <form style="width:100%;" asp-controller="Novosti" asp-action="OstaviKomentar">
+                <textarea type="" id="NovostDetaljiKomentarDetaljiInput" name="Komentar"></textarea>
+                <input id="NovostDetaljiKomentarDetaljiSubmit" type="submit" value="Ostavi komentar" >
+                <input type="hidden" name="id" value="@Model.NovostId" />
+            </form>
+        </div>
+    </div>
+    }
+
+    @foreach (var Komentar in Model.Komentari)
+    {
+        <div id="NovostDetaljiOstaviKomentar" class="NovostDetaljiKomentar">
+            <img class="NovostDetaljiKomentarSlika" src="@Komentar.Avatar">
+            <div class="NovostDetaljiKomentarDetalji">
+                <div class="NovostDetaljiKomentarDetaljiUsername">@Komentar.Username:</div>
+                <div class="NovostDetaljiKomentarDetaljiText">@Komentar.Sadrzaj</div>
+            </div>
+        </div>
+    }
+
+</div>

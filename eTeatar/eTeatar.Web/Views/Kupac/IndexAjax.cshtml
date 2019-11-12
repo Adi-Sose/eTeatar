@@ -1,0 +1,19 @@
+﻿@model eTeatar.Web.ViewModels.Kupac.IndexAjaxVM;
+
+@{
+    Layout = "";
+}
+
+<form asp-action="UpdateAvatar" asp-controller="Kupac" method="post">
+    <div id="OdabirAvataraWrapper">
+        <div id="OdabirAvataraContainer">
+
+            @foreach (var Avatar in Model.Avatari)
+            {
+                <input type="radio" class="radio_item" value="@Avatar.Id" name="AvatarId" id="rating @Avatar.Id" @if(Avatar.Selected){<text>checked</text>}>
+                <label class="label_item" for="rating @Avatar.Id"> <img src="@Avatar.Link" alt="Nema"> </label>
+            }
+        </div>
+        <input id="OdabirAvataraSubmit" type="submit" value="Odaberi" class="btn">
+    </div>
+</form>

@@ -1,0 +1,35 @@
+﻿@model eTeatar.Web.ViewModels.User.AdminRegisterVM
+
+<h1>Admin Registration</h1>
+
+<form asp-controller="User" asp-action="AdminRegisterAsync" method="POST">
+
+    <div class="form-group">
+        <label class="col-form-label">Username</label>
+        <input asp-for="Username" class="form-control" />
+        @if (Model.UsernameError != null)
+        {<input asp-for="UsernameError" class="alert alert-danger btn-block" readonly/>}
+    </div>
+
+    <div class="form-group">
+        <label class="col-form-label">Email</label>
+        <input asp-for="Email" class="form-control" />
+        @if (Model.EmailError != null)
+        {<input asp-for="EmailError" class="alert alert-danger btn-block" readonly/>}
+    </div>
+
+    <div class="form-group">
+        <label class="col-form-label">Password</label>
+        <input asp-for="Password" type="password" class="form-control" />
+        @if (Model.PasswordError != null)
+        {<input asp-for="PasswordError" class="alert alert-danger btn-block" readonly/>}
+    </div>
+
+    <div class="form-group">
+        <label class="col-form-label">Confirm Password</label>
+        <input asp-for="ConfirmPassword" type="password" class="form-control"/>
+    </div>
+
+    <input type="submit" value="Register" class="btn btn-success" />
+
+</form>

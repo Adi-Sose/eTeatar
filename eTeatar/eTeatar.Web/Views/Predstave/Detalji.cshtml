@@ -1,0 +1,95 @@
+﻿@{ViewData["Title"] = "eTeatar";}
+@model eTeatar.Web.ViewModels.Predstave.DetaljiVM;
+
+@if (Model.IsLoggedIn) { Layout = "_LayoutAnonymus"; }
+else { Layout = "_LayoutLoggedIn"; }
+
+
+<div id="ContentPredstava">
+
+    <div id="ContentPredstavaHeader">
+
+        <div id="ContentPredstavaHeaderSlika" style="background-image: url('@Model.SlikaLink')">
+            <img id="ContentPredstavaHeaderRibbon" src="/images/Ribbon.svg">
+
+            <svg id="ContentPredstavaHeaderNaslov" viewBox="-10 -40 1000 1000">
+                <path id="curve" d="M6771.213,752.74s411.421-144.8,933.167,0" transform="translate(-6771.047 -687.865)" />
+                <text id="ContentPredstavaHeaderText">
+                    <textPath i xlink:href="#curve" startOffset="480px">
+                        @Model.Naziv
+                    </textPath>
+                </text>
+            </svg>
+
+        </div>
+
+        <div id="ContentPredstavaHeaderDetalji">
+            <img id="ContentPredstavaHeaderRating" src="/images/@Model.Ocjena">
+            <div id="ContentPredstavaHeaderZanrovi">@Model.Zanrovi</div>
+        </div>
+
+    </div>
+
+    <div id="ContentPredstavaDetalji">
+
+        <div id="ContentPredstavaDetaljiHeader">
+            <div id="ContentPredstavaDetaljiHeaderGlavniGlumac">
+                <div class="ContentPredstavaDetaljiHeaderNaslov">Glavni glumac:</div>
+                <div class="ContentPredstavaDetaljiHeaderText">@Model.GlavniGlumac</div>
+            </div>
+
+            <div id="ContentPredstavaDetaljiHeaderReziser">
+                <div class="ContentPredstavaDetaljiHeaderNaslov">Reziser:</div>
+                <div class="ContentPredstavaDetaljiHeaderText">@Model.Reziser</div>
+            </div>
+
+            <div id="ContentPredstavaDetaljiHeaderIzvornoDjelo">
+                <div class="ContentPredstavaDetaljiHeaderNaslov">Izvorno djelo: </div>
+                <div class="ContentPredstavaDetaljiHeaderText">@Model.IzvornoDjelo</div>
+            </div>
+        </div>
+
+        <div id="ContentPredstavaDetaljiOpis">
+            @Model.Opis
+        </div>
+    </div>
+
+    <div id="ContentPredstavaGlumci">
+
+        @foreach (var Uloga in @Model.Uloge)
+        {
+            <div class="ContentPredstavaGlumciUloga">
+                <div class="ContentPredstavaGlumciUlogaSlika"></div>
+                <div class="ContentPredstavaGlumciUlogaRight">
+                    <div class="ContentPredstavaGlumciUlogaNazivUloge">@Uloga.UlogaNaziv:</div>
+                    <div class="ContentPredstavaGlumciUlogaImeGlumca">@Uloga.Glumac</div>
+                </div>
+            </div>
+        }
+    </div>
+
+    <div id="ContentPredstavaTermini">
+        <div id="ContentPredstavaTerminiNaslov">TERMINI</div>
+
+        @foreach(var Termin in @Model.Termini)
+        {
+            <div id="ContentPredstavaTermin">
+                <div class="ContentPredstavaTerminNaslov">
+
+                    <div class="ContentPredstavaTerminGornjiRed">
+                        <span class="ContentPredstavaTerminNaslovGrad">@Termin.Grad,</span>
+                        <span class="ContentPredstavaTerminNaslovDatum"> @Termin.Datum</span>
+                    </div>
+
+                    <div class="ContentPredstavaTerminNaslovTeatar">(@Termin.Teatar)</div>
+                </div>
+
+                <div id="ContentPredstavaDugmeDiv" class="btn" onclick="Redirect('/Termini/Checkout/@Termin.TerminId')">
+                    <div id="ContentPredstavaDugme">Kupi Kartu</div>
+                </div>
+            </div>
+        }
+
+    </div>
+
+</div>

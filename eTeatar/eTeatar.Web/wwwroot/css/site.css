@@ -1,0 +1,165 @@
+﻿/* Please see documentation at https://docs.microsoft.com/aspnet/core/client-side/bundling-and-minification
+for details on configuring this project to bundle and minify static web assets. */
+
+a.navbar-brand {
+  white-space: normal;
+  text-align: center;
+  word-break: break-all;
+}
+
+/* Sticky footer styles
+-------------------------------------------------- */
+html {
+  font-size: 14px;
+}
+@media (min-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+.border-top {
+  border-top: 1px solid #e5e5e5;
+}
+.border-bottom {
+  border-bottom: 1px solid #e5e5e5;
+}
+
+.box-shadow {
+  box-shadow: 0 .25rem .75rem rgba(0, 0, 0, .05);
+}
+
+button.accept-policy {
+  font-size: 1rem;
+  line-height: inherit;
+}
+
+/* Sticky footer styles
+-------------------------------------------------- */
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+  /* Margin bottom by footer height */
+  margin-bottom: 60px;
+}
+.footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  white-space: nowrap;
+  /* Set the fixed height of the footer here */
+  height: 60px;
+  line-height: 60px; /* Vertically center the text there */
+}
+
+
+#LoginContentWrapper {
+    display: -ms-grid;
+    display: grid;
+    justify-items: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    width: 20%;
+    margin: auto;
+    height: 100vh;
+}
+
+#LoginContent {
+    display: -ms-grid;
+    display: grid;
+    justify-items: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    width: 100%;
+    row-gap: 3vh;
+    margin-bottom: 28vh;
+}
+
+#LoginRegisterLogo {
+    height: 16vh;
+}
+
+#LogineRegisterLogoText {
+    color: #a4a4a4;
+    font-family: "Segoe UI";
+    font-size: 2.5vw;
+    margin-top: -3vh;
+    margin-bottom: 1vh;
+}
+
+.LoginContentDiv {
+    display: -ms-grid;
+    display: grid;
+    width: 100%;
+    row-gap: 0.4vh;
+}
+
+.LoginContentDivInput {
+    width: 96%;
+    padding: 0.7vh;
+    border-radius: 4px;
+    background: #060f19;
+    border: 1px solid #fafafa;
+    font-family: Montserrat;
+    font-weight: 501;
+    font-size: 2.2vh;
+    color: #fff;
+}
+
+.LoginContentDivError {
+    font-family: Montserrat;
+    font-weight: 500;
+    font-size: 2.0vh;
+    color: #f00;
+}
+
+#LoginContentDugmad {
+    display: -ms-grid;
+    display: grid;
+    width: 100%;
+    justify-items: center;
+    -ms-grid-columns: 50% 50%;
+    grid-template-columns: 50% 50%;
+    margin-top: -0.5vh;
+}
+
+.LoginContentDugmeDiv {
+    width: 77%;
+    height: 4.5vh;
+    background-color: #9D1E31;
+    border-radius: 15px;
+    display: -ms-grid;
+    display: grid;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    justify-items: center;
+    font-family: Montserrat;
+    font-weight: bold;
+    font-size: 2vh;
+    letter-spacing: 0.05em;
+    color: white;
+}
+
+#LoginContentDugmeDivLogin {
+    background-color: #13BE13;
+}
+
+.Splitted {
+    -ms-grid-columns: 46.5% 46.5%;
+    grid-template-columns: 46.5% 46.5%;
+    -webkit-column-gap: 5%;
+    column-gap: 5%;
+    justify-items: center;
+}
+
+#VecImamNalog {
+    color: white;
+    text-decoration: underline;
+    font-family: Montserrat;
+}

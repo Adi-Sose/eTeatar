@@ -1,0 +1,1586 @@
+@import url("https://fonts.googleapis.com/css?family=Montserrat:400,700");
+@import url("//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css");
+
+* {
+    padding: 0;
+    margin: 0;
+}
+
+.grow {
+    transition: all .2s ease-in-out;
+}
+
+.grow:hover {
+    transform: scale(1.05);
+    opacity:1;
+}
+
+.grow-small {
+    transition: all .2s ease-in-out;
+}
+
+.grow-small:hover {
+    transform: scale(1.006);
+    opacity:1;
+}
+
+.btn{
+    cursor: pointer;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+    outline: none;
+} 
+
+body {
+    background: #060F19;
+    overflow: hidden;
+}
+
+#Wrapper {
+    width: 100%;
+    height: 100%;
+    overflow-y: scroll;
+    position: absolute;
+    padding-right: 50px;
+    overflow-x: hidden;
+}
+
+#Header {
+    width: 100%;
+    float: left;
+    position: fixed;
+    z-index: 1;
+}
+
+#UpperHeader {
+    padding: 0.6vh;
+    padding-left: 7.5%;
+    padding-right: 7.5%;
+    background: #000000;
+    color: #a4a4a4;
+    height: 3.15vh;
+}
+
+#LogoDiv {
+    float: left;
+}
+
+#Logo {
+    height: 3vh;
+    float: left;
+}
+
+#LogoText {
+    font-family: "Segoe UI";
+    font-weight: bold;
+    font-size: 1.3vw;
+    text-align: left;
+    margin-left: 0.6vw;
+    float: left;
+}
+
+#UserDiv {
+    margin-top: 0.3vh;
+    float: right;
+    width: 14%;
+}
+
+#Login {
+    float: left;
+    font-family: Montserrat;
+    font-weight: 550;
+    font-size: 2.05vh;
+}
+
+#Register {
+    float: right;
+    font-family: Montserrat;
+    font-weight: 550;
+    font-size: 2.05vh;
+    margin-right: 3.3%;
+}
+
+#LowerHeader {
+    padding: 0.65vh;
+    padding-left: 7.5%;
+    padding-right: 7.5%;
+    background: #515052;
+    color: #a4a4a4;
+    height: 3.15vh;
+    clear: both;
+}
+
+    #LowerHeader > div {
+        margin-right: 3vw;
+        display: inline-block;
+        font-family: Montserrat;
+        font-size: 2.05vh;
+        margin-top: 0.2vh;
+        color: #DCDCDC;
+    }
+
+#Content {
+    margin-top: 9.1vh;
+    padding-left: 7.5%;
+    padding-right: 7.5%;
+    clear: both;
+    float: left;
+    color: #DCDCDC;
+    width: 85%;
+}
+
+#PredstaveDiv {
+    width: 100%;
+}
+
+.Naslov {
+    width: 100%;
+    margin-top: 1.5vh;
+    text-align: center;
+    font-weight: 600;
+    font-family: Montserrat, "Open Sans", Helvetica, Arial, sans-serif;
+    font-size: 4vh;
+    letter-spacing: 0.15vw;
+}
+
+#Predstave {
+    width: 100%;
+    height: 70vh;
+    margin-top: 2vh;
+    text-align: center;
+}
+
+.Predstava {
+    height: 70vh;
+    width: 30%;
+    float: left;
+    margin-right: 5%;
+    border-radius: 10px;
+    background-size: auto 70vh;
+    background-position: center;
+    cursor: pointer;
+    opacity:0.8;
+}
+
+#Predstava1 {
+    background-image: url("/images/Oz.jpg");
+}
+
+#Predstava2 {
+    background-image: url("/images/Idk.jpg");
+}
+
+#Predstava3 {
+    margin-right: 0;
+    background-image: url("/images/Sirena.jpg");
+}
+
+.PredstavaOverlay {
+    border-radius: 0 0 10px 10px;
+    width: 100%;
+    height: 10vh;
+    margin-top: 60vh;
+    background: rgba(99, 102, 106, 0.65);
+}
+
+.PredstavaNaslov {
+    text-align: center;
+    color: #ffffff;
+    font-weight: 700;
+    font-family: Montserrat, "Open Sans", Helvetica, Arial, sans-serif;
+    letter-spacing: 0.15vw;
+    font-size: 3.5vh;
+}
+
+.PredstavaZanrovi {
+    text-align: center;
+    color: #ffffff;
+    font-weight: 700;
+    font-family: Montserrat, "Open Sans", Helvetica, Arial, sans-serif;
+    letter-spacing: 0.1vw;
+    font-size: 2.3vh;
+    margin-top: 2vh;
+}
+
+#DugmeDiv {
+    text-align: center;
+    margin-top: 3vh;
+}
+
+#Dugme {
+    width: 13.33%;
+    background: #13BE13;
+    text-align: center;
+    display: inline-block;
+    border-radius: 20px;
+    padding: 0.45%;
+    font-weight: 700;
+    font-family: Montserrat, "Open Sans", Helvetica, Arial, sans-serif;
+    font-size: 2.6vh;
+    cursor: pointer;
+}
+
+#Kalendar-Background {
+    position: absolute;
+    z-index: -1;
+    margin-left: -7.5%;
+    margin-top: -0.75vh;
+    width: 100.15vw;
+}
+
+#KalendarNaslov {
+    margin-top: 8vh;
+}
+
+#Kalendar {
+    margin-left: 11vw;
+    margin-top: 3.5vh;
+    height: 76vh;
+    width: 77%;
+    background: #393F4F;
+    border-radius: 37px;
+    overflow: hidden;
+    font-family: Montserrat, "Open Sans", Helvetica, Arial, sans-serif;
+    font-size: 2.2vh;
+    color: #C0CAD1;
+}
+
+#KalendarHeader {
+    width: 100%;
+    height: 6.4vh;
+    display: -ms-grid;
+    display: grid;
+    justify-items: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+}
+
+#KalendarDani {
+    width: 100%;
+    height: 5.4vh;
+    background: #5A6378;
+    justify-items: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+}
+
+#KalendarCelije {
+    width: 100%;
+    height: 64.2;
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+}
+
+.KalendarCelija {
+    border: 1px solid #2E3341;
+    height: 10.7vh;
+    padding: 1vh;
+}
+
+.KalendarCelijaBroj {
+    height: 8vh;
+    color: white;
+    font-size: 5vh;
+    display: -ms-grid;
+    display: grid;
+    justify-items: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+}
+
+
+#NovostiDiv {
+    margin-top: 7vh;
+}
+
+#Novosti {
+    margin-top: 2.6vh;
+    margin-bottom: 2vh;
+    height: 80vh;
+}
+
+#GlavnaNovost {
+    background-image: url("/images/Novost1_Image_A0_Rectangle_14_pattern.png");
+    height: 80vh;
+    width: 50%;
+    float: left;
+    background-size: 100% 100%;
+    background-position: center;
+}
+
+#OstaleNovosti {
+    float: left;
+    width: 50%;
+}
+
+.GlavnaNovostOverlay {
+    width: 100%;
+    height: 30vh;
+    margin-top: 49vh;
+    background: rgba(99, 102, 106, 0.65);
+    padding-top: 1.5vh;
+}
+
+.NovostNaslov {
+    text-align: center;
+    color: #ffffff;
+    font-weight: 700;
+    font-family: Montserrat, "Open Sans", Helvetica, Arial, sans-serif;
+    letter-spacing: 0.1vw;
+    font-size: 4vh;
+}
+
+.GlavnaNovostOpis {
+    margin: 1.5vh;
+    font-weight: 400;
+    font-family: Montserrat, "Open Sans", Helvetica, Arial, sans-serif;
+    font-size: 2.5vh;
+}
+
+.SporednaNovost {
+    height: 39vh;
+    width: 49%;
+    float: left;
+    margin-left: 1%;
+    margin-top: 1%;
+    background-size: 100% 100%;
+    background-position: center;
+}
+
+.SporednaNovostOverlay {
+    width: 100%;
+    height: 10vh;
+    margin-top: 28.25vh;
+    background: rgba(99, 102, 106, 0.65);
+    padding-top: 0.75vh;
+}
+
+#Novost1 {
+    background-image: url("/images/Novost1_Image_A0_Rectangle_14_pattern.png");
+}
+
+#Novost2 {
+    background-image: url("/images/Novost1_Image_A0_Rectangle_14_pattern.png");
+}
+
+#Novost3 {
+    background-image: url("/images/Novost1_Image_A0_Rectangle_14_pattern.png");
+}
+
+#Novost4 {
+    background-image: url("/images/Novost1_Image_A0_Rectangle_14_pattern.png");
+}
+
+#ContentGrid {
+    /*background :black;*/
+    width: 100%;
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: 25% 75%;
+    grid-template-columns: 25% 75%;
+    margin-top: 4vh;
+}
+
+#ContentLeft {
+    background: black;
+    margin-right: 1.25%;
+    min-height: 80vh;
+    height: 100%;
+}
+
+#ContentRight {
+    /*background:red;*/
+    margin-left: 1.25%;
+    display: -ms-grid;
+    display: grid;
+}
+
+.ContentRightPredstava {
+    background: black;
+    height: 33vh;
+    margin-bottom: 4vh;
+}
+
+#ContentRight > .ContentRightPredstava:last-of-type {
+    margin-bottom: 0;
+}
+
+#ContentRightPredstavaImage {
+    background-image: url("/images/Sirena.jpg");
+    background-position: center;
+    background-size: cover;
+    height: 100%;
+    width: 18%;
+    float: left;
+}
+
+#ContentRightPredstavaDetalji {
+    float: left;
+    width: 78%;
+    color: #f9f9f9;
+}
+
+#ContentRightPredstavaNaslov {
+    font-weight: 600;
+    font-family: Montserrat, "Open Sans", Helvetica, Arial, sans-serif;
+    font-size: 4vh;
+    letter-spacing: 0.15vw;
+    margin-left: 1.3vw;
+    margin-top: 1.3vh;
+    float: left;
+}
+
+#ContentRightPredstavaOcjena {
+    float: right;
+    margin-right: 1.3vw;
+    margin-top: 2.8vh;
+    height: 2.3vh;
+}
+
+#ContentRightPredstavaOpis {
+    clear: both;
+    margin-left: 1.3vw;
+    padding-top: 1.3vh;
+    margin-right: 1.3vw;
+    height: 15vh;
+    overflow: hidden;
+}
+
+.ContentRightPredstavaDetaljiNaslov {
+    font-weight: 400;
+    font-size: 1.45vh;
+    font-family: Montserrat, "Open Sans", Helvetica, Arial, sans-serif;
+    letter-spacing: 0.05vw;
+}
+
+.ContentRightPredstavaDetaljiText {
+    margin-top: 0.75vh;
+    font-weight: 550;
+    font-size: 1.8vh;
+    font-family: Montserrat, "Open Sans", Helvetica, Arial, sans-serif;
+    color: #d6d6d6;
+}
+
+#ContentRightPredstavaDetaljiBottom {
+    float: left;
+    width: 60%;
+}
+
+.ContentRightPredstavaZanroviGlumci {
+    margin-left: 1.3vw;
+    padding-top: 1.3vh;
+    margin-right: 1.3vw;
+}
+
+    .ContentRightPredstavaZanroviGlumci > .ContentRightPredstavaDetaljiNaslov,
+    .ContentRightPredstavaZanroviGlumci > .ContentRightPredstavaDetaljiText {
+        display: inline-block;
+    }
+
+#ContentRightPredstavaDugmeDiv {
+    margin-top: 5vh;
+    float: right;
+    width: 40%;
+    text-align: center;
+}
+
+#ContentRightPredstavaDugme {
+    background: #13BE13;
+    float: right;
+    margin-right: 1.5vw;
+    border-radius: 50px;
+    padding: 2% 9%;
+    font-weight: 700;
+    font-family: Montserrat, "Open Sans", Helvetica, Arial, sans-serif;
+    font-size: 1.8vh;
+}
+
+#ContentLeftSearchboxDiv {
+    margin-top: 2vh;
+    text-align: center;
+}
+
+#ContentLeftSearchBox {
+    display: inline-block;
+    padding: 1%;
+    padding-left: 3%;
+    color: #464646;
+    width: 80%;
+    border-radius: 11px;
+    border: gray solid 5px;
+    font-weight: 500;
+    font-family: Montserrat, "Open Sans", Helvetica, Arial, sans-serif;
+    font-size: 2.6vh;
+}
+
+#ContentLeftZanrovi {
+    text-align: center;
+    margin-top: 2vh;
+    font-weight: 500;
+    font-family: Montserrat, "Open Sans", Helvetica, Arial, sans-serif;
+    font-size: 2vh;
+    width: 100%;
+    padding: 1vh 0;
+    background: #0a0a0a;
+}
+
+.ContentLeftZanr {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: 50% 50%;
+    grid-template-columns: 50% 50%;
+    width: 100%;
+    margin: 1vh 0;
+}
+
+.ContentLeftZanrNaslov {
+    -ms-grid-column-align: end;
+    justify-self: end;
+}
+
+.ContentLeftZanrInput {
+    -ms-grid-column-align: left;
+    justify-self: left;
+    margin-left: 0.8vw;
+    -webkit-transform: scale(1.4);
+    transform: scale(1.4);
+}
+
+/*#ContentLeftMojGradDiv {
+    text-align: center;
+    margin-top: 1vh;
+    font-weight: 500;
+    font-family: Montserrat, "Open Sans", Helvetica, Arial, sans-serif;
+    font-size: 2vh;
+    width: 100%;
+    padding: 1vh 0;
+}
+
+#ContentLeftMojGrad {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: 75% 25%;
+    grid-template-columns: 75% 25%;
+    width: 100%;
+    margin-bottom:1vh;
+}
+
+#ContentLeftMojGradNaslov {
+    -ms-grid-column-align: end;
+    justify-self: end;
+}
+
+#ContentLeftMojGradInput {
+    -ms-grid-column-align: left;
+    justify-self: left;
+    margin-left: 0.8vw;
+    -webkit-transform: scale(1.4);
+    transform: scale(1.4);
+}*/
+
+#ContentLeftPredstavaRatingDiv {
+    display: -ms-grid;
+    display: grid;
+    row-gap: 1vh;
+    padding: 2vh 0;
+    padding-top: 1vh;
+}
+
+.ContentLeftPredstavaRating {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: 7.2fr 2.8fr;
+    grid-template-columns: 7.2fr 2.8fr;
+    margin-top: 1vh;
+}
+
+.ContentLeftPredstavaRatingImage {
+    -ms-grid-column-align: right;
+    justify-self: right;
+    height: 2.5vh;
+    opacity: 0.4;
+}
+
+    .ContentLeftPredstavaRatingImage:hover, .ContentLeftPredstavaRatingImage:hover ~div{
+        opacity: 0.7;
+    }
+
+.ContentLeftPredstavaRatingText {
+    -ms-grid-column-align: left;
+    justify-self: left;
+    font-weight: 700;
+    font-family: Montserrat, "Open Sans", Helvetica, Arial, sans-serif;
+    font-size: 2.4vh;
+    color: #9d1e31;
+    opacity: 0.4;
+}
+
+#ContentLeftPredstavaDugmeDiv {
+    margin-top: 3.3vh;
+    margin-bottom: 3.3vh;
+    width: 90%;
+    text-align: center;
+    margin-left: 8%;
+}
+
+#ContentLeftPredstavaDugme {
+    background: #9d1e31;
+    margin-right: 1.5vw;
+    border-radius: 50px;
+    padding: 3% 5%;
+    font-weight: 700;
+    font-family: Montserrat, "Open Sans", Helvetica, Arial, sans-serif;
+    font-size: 2vh;
+    color: white;
+    border: 0;
+}
+
+
+#ContentPredstava {
+    display: -ms-grid;
+    display: grid;
+    margin-top: 1.7vh;
+}
+
+#ContentPredstavaHeaderSlika {
+    width: 100%;
+    background-position: center;
+    background-size: cover;
+    background-image: url("/images/Sirena.jpg");
+    height: 39vh;
+    text-align: center;
+}
+
+#ContentPredstavaHeaderRibbon {
+    margin-top: 26.6vh;
+    width: 73%;
+}
+
+#ContentPredstavaHeaderNaslov {
+    margin-top: -19.6vh;
+    width: 57%;
+    fill: transparent;
+}
+
+#ContentPredstavaHeaderText {
+    font-weight: 700;
+    font-family: Montserrat, "Open Sans", Helvetica, Arial, sans-serif;
+    font-size: 5.5vh;
+    text-anchor: middle;
+    fill: white;
+}
+
+#ContentPredstavaHeaderDetalji {
+    margin-top: 7vh;
+    text-align: center;
+}
+
+#ContentPredstavaHeaderRating {
+    width: 40%;
+}
+
+#ContentPredstavaHeaderZanrovi {
+    color: #F9F9F9;
+    margin-top: 2vh;
+    font-weight: 700;
+    font-family: Montserrat, "Open Sans", Helvetica, Arial, sans-serif;
+    font-size: 2vh;
+}
+
+#ContentPredstavaDetalji {
+    margin-top: 4.2vh;
+}
+
+#ContentPredstavaDetaljiHeader {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: 33% 33% 33%;
+    grid-template-columns: 33% 33% 33%;
+    font-family: Montserrat, "Open Sans", Helvetica, Arial, sans-serif;
+    font-size: 2.2vh;
+    color: #F9F9F9;
+}
+
+#ContentPredstavaDetaljiHeaderGlavniGlumac {
+    -ms-grid-column-align: start;
+    justify-self: start;
+}
+
+#ContentPredstavaDetaljiHeaderReziser {
+    -ms-grid-column-align: center;
+    justify-self: center;
+}
+
+#ContentPredstavaDetaljiHeaderIzvornoDjelo {
+    -ms-grid-column-align: end;
+    justify-self: end;
+}
+
+.ContentPredstavaDetaljiHeaderNaslov {
+    display: inline-block;
+}
+
+.ContentPredstavaDetaljiHeaderText {
+    display: inline-block;
+    font-weight: 600;
+}
+
+#ContentPredstavaDetaljiOpis {
+    margin-top: 4.2vh;
+    font-family: Montserrat, "Open Sans", Helvetica, Arial, sans-serif;
+    font-size: 1.7vh;
+    font-weight: 600;
+    color: #cccccc;
+}
+
+#ContentPredstavaGlumci {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: 25% 25% 25% 25%;
+    grid-template-columns: 25% 25% 25% 25%;
+    margin-top: 4.2vh;
+    row-gap: 3vh;
+}
+
+.ContentPredstavaGlumciUloga {
+    -ms-grid-column-align: center;
+    justify-self: center;
+}
+
+.ContentPredstavaGlumciUlogaSlika {
+    float: left;
+    border-radius: 100%;
+    height: 12vh;
+    width: 12vh;
+    background-position: center;
+    background-size: cover;
+    background-image: url("/images/GlumacPhoto.png");
+}
+
+.ContentPredstavaGlumciUlogaRight {
+    float: left;
+    margin-left: 1vw;
+    margin-top: 0.5vw;
+    font-family: Montserrat, "Open Sans", Helvetica, Arial, sans-serif;
+    font-size: 2vh;
+    color: #F9F9F9;
+}
+
+.ContentPredstavaGlumciUlogaImeGlumca {
+    font-weight: 600;
+    font-size: 2.3vh;
+    width: 2vw;
+}
+
+#ContentPredstavaTermini {
+    display: -ms-grid;
+    display: grid;
+    justify-items: center;
+    margin: 5vh 0;
+    padding: 3vh 0;
+    width: 60%;
+    -ms-grid-column-align: center;
+    justify-self: center;
+    background: black;
+}
+
+#ContentPredstavaTerminiNaslov {
+    font-weight: 600;
+    font-family: Montserrat, "Open Sans", Helvetica, Arial, sans-serif;
+    font-size: 4vh;
+    letter-spacing: 0.15vw;
+    color: #DCDCDC;
+}
+
+#ContentPredstavaTermin {
+    margin-top: 6vh;
+    display: -ms-grid;
+    display: grid;
+    justify-items: center;
+    row-gap: 2vh;
+    width:100%;
+}
+
+.ContentPredstavaTerminNaslov {
+    width: 100%;
+    text-align: center;
+    font-family: Montserrat, "Open Sans", Helvetica, Arial, sans-serif;
+    font-size: 3.3vh;
+    letter-spacing: 0.11vw;
+    color: #DCDCDC;
+}
+
+.ContentPredstavaTerminGornjiRed {
+    width: 100%;
+    text-align: center;
+}
+
+.ContentPredstavaTerminNaslovGrad {
+    text-align: end;
+}
+
+.ContentPredstavaTerminNaslovDatum {
+    margin-left: 0.6vw;
+    text-align: start;
+    font-weight: 600;
+}
+
+.ContentPredstavaTerminNaslovTeatar {
+    font-weight: 600;
+}
+
+#ContentPredstavaDugmeDiv {
+    -ms-grid-column-align: center;
+    justify-self: center;
+    text-align: center;
+}
+
+#ContentPredstavaDugme {
+    background: #9D1E31;
+    float: right;
+    border-radius: 15px;
+    font-weight: 700;
+    padding: 1.3vh 12vh;
+    font-family: Montserrat, "Open Sans", Helvetica, Arial, sans-serif;
+    font-size: 2.5vh;
+}
+
+#LoginContentWrapper {
+    display: -ms-grid;
+    display: grid;
+    justify-items: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    width: 20%;
+    margin: auto;
+    height: 100vh;
+}
+
+#LoginContent {
+    display: -ms-grid;
+    display: grid;
+    justify-items: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    width: 100%;
+    row-gap: 1.7vh;
+    margin-bottom: 32.8vh;
+}
+
+#LoginRegisterLogo {
+    height: 16vh;
+}
+
+#LogineRegisterLogoText {
+    color: #a4a4a4;
+    font-family: "Segoe UI";
+    font-size: 2.5vw;
+    margin-top: -1.7vh;
+    margin-bottom: 1vh;
+}
+
+.LoginContentDiv {
+    display: -ms-grid;
+    display: grid;
+    width: 100%;
+    row-gap: 0.4vh;
+}
+
+.LoginContentDivInput {
+    width: 96%;
+    padding: 0.7vh;
+    border-radius: 4px;
+    background: #060f19;
+    border: 1px solid #fafafa;
+    font-family: Montserrat;
+    font-weight: 501;
+    font-size: 2.2vh;
+    color: #fff;
+}
+
+.LoginContentDivError {
+    font-family: Montserrat;
+    font-weight: 500;
+    font-size: 2.0vh;
+    color: #f00;
+}
+
+#LoginContentDugmad {
+    display: -ms-grid;
+    display: grid;
+    width: 100%;
+    justify-items: center;
+    -ms-grid-columns: 50% 50%;
+    grid-template-columns: 50% 50%;
+    margin-top: -0.5vh;
+}
+
+.LoginContentDugmeDiv {
+    width: 77%;
+    height: 4.5vh;
+    background-color: #9D1E31;
+    border-radius: 15px;
+    display: -ms-grid;
+    display: grid;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    justify-items: center;
+    font-family: Montserrat;
+    font-weight: bold;
+    font-size: 2vh;
+    letter-spacing: 0.05em;
+    color: white;
+}
+
+#LoginContentDugmeDivLogin {
+    background-color: #13BE13;
+}
+
+.Splitted {
+    -ms-grid-columns: 46.5% 46.5%;
+    grid-template-columns: 46.5% 46.5%;
+    -webkit-column-gap: 5%;
+    column-gap: 5%;
+    justify-items: center;
+}
+
+#VecImamNalog {
+    color: white;
+    text-decoration: underline;
+    font-family: Montserrat;
+}
+
+.ContentLeftPredstavaRatingRadio {
+    position: absolute;
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+[type=radio] ~ img {
+    cursor: pointer;
+}
+
+[type=radio]:checked ~ img{
+    opacity:1;
+}
+
+[type=radio]:checked ~ div{
+    opacity: 1;
+}
+
+
+#ContentTerminCheckoutWrapper {
+    display: -ms-grid;
+    display: grid;
+    justify-items: center;
+    padding: 6vh 0;
+    width: 42%;
+    margin: 2vh auto 0 auto;
+    -ms-grid-column-align: center;
+    justify-self: center;
+    background: black;
+    row-gap: 10vh;
+}
+
+#ContentTerminCheckoutNaslov {
+    font-weight: 700;
+    font-family: Montserrat, "Open Sans", Helvetica, Arial, sans-serif;
+    font-size: 7vh;
+}
+
+.ContentTerminCheckoutGornjiRed {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: 33% 67%;
+    grid-template-columns: 33% 67%;
+    width: 100%;
+}
+
+.ContentTerminCheckoutGrad {
+    -ms-grid-column-align: end;
+    justify-self: end;
+}
+
+.ContentTerminCheckoutDatum {
+    width: 100%;
+    margin-left: 1vw;
+    -ms-grid-column-align: left;
+    justify-self: left;
+    font-weight: 600;
+}
+
+.ContentTerminCheckoutTeatar {
+    font-weight: 600;
+}
+
+.ContentTerminCheckoutInputDiv {
+    display: -ms-grid;
+    display: grid;
+    width: 100%;
+    row-gap: 0.6vh;
+}
+
+#ContentTerminCheckoutInputDivNaslov {
+    font-family: Montserrat;
+    font-weight: 500;
+    font-size: 2.2vh;
+    color: #fff;
+    -ms-grid-column-align: center;
+    justify-self: center;
+}
+
+.ContentTerminCheckoutInput {
+    width: 64%;
+    padding: 0.8vh;
+    border-radius: 4px;
+    background: #060f19;
+    border: 1px solid #b8b8b8;
+    font-family: Montserrat;
+    font-weight: 501;
+    font-size: 2.2vh;
+    color: #d4d4d4;
+    -ms-grid-column-align: center;
+    justify-self: center;
+}
+
+.ContentTerminCheckoutError {
+    font-family: Montserrat;
+    font-weight: 500;
+    font-size: 2.0vh;
+    color: #f00;
+    -ms-grid-column-align: center;
+    justify-self: center;
+}
+
+#ContentTerminCheckoutCijena {
+    display: grid;
+    -ms-grid-columns: 1fr;
+    grid-template-columns: 1fr;
+    jsutify-self:center;
+    font-size: 3.5vh;
+    letter-spacing: 0.1vw;
+    font-family: Montserrat;
+    color: #fff;
+    width:100%;
+    text-align:center;
+}
+
+#ContentTerminCheckoutCijenaRight {
+    display:inline-block;
+    font-weight: 600;
+    margin-left: 6%;
+}
+
+#ContentTerminCheckoutCijenaLeft {
+    display: inline-block;
+}
+
+#ContentTerminCheckoutFooter {
+    width: 100%;
+    display: -ms-grid;
+    display: grid;
+    row-gap: 2.2vh;
+    justify-items: center;
+}
+
+#ContentTerminCheckoutInputContainer {
+    width: 100%;
+    display: -ms-grid;
+    display: grid;
+    row-gap: 2.5vh;
+}
+
+#ContentTerminCheckoutDugmeDiv {
+    -ms-grid-column-align: center;
+    justify-self: center;
+    text-align: center;
+}
+
+#ContentTerminCheckoutDugme {
+    background: #FFC439;
+    float: right;
+    border-radius: 15px;
+    font-weight: 700;
+    padding: 1.3vh 16vh;
+    font-family: Montserrat, "Open Sans", Helvetica, Arial, sans-serif;
+    font-size: 2.5vh;
+    display: -ms-grid;
+    display: grid;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    justify-items: center;
+}
+
+.stepupdown {
+    text-align: center;
+    border: 1px solid #b8b8b8;
+    border-radius: 4px;
+    background: #242f3b;
+    font-size: 3vh;
+}
+
+#ButtonsParent {
+    display: grid;
+    grid-template-columns: 50% 50%;
+    width: 22%;
+    justify-self: center;
+}
+
+
+#MojProfilWrapper {
+    margin-top: 3vh;
+    display: -ms-grid;
+    display: grid;
+    width: 100%;
+    justify-items: center;
+    -ms-grid-columns: 100%;
+    grid-template-columns: 100%;
+    row-gap: 3vh;
+}
+
+#MojProfil {
+    display: -ms-grid;
+    display: grid;
+    width: 100%;
+    -ms-grid-columns: 48.5% 48.5%;
+    grid-template-columns: 48.5% 48.5%;
+    -webkit-column-gap: 3%;
+    column-gap: 3%;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    margin-bottom: 1.5vh;
+}
+
+#MojProfilSlika {
+    -ms-grid-column-align: right;
+    justify-self: right;
+    background-image: url("/images/GlumacPhoto.png");
+    height: 25vh;
+    width: 25vh;
+    background-position: center;
+    background-size: cover;
+    border-radius: 100%;
+}
+
+#MojProfilSlikaOverlay {
+    margin-top: 17.6vh;
+    margin-left: 4%;
+    height: 7.5vh;
+    width: 23vh;
+    background-image: url("/images/Subtraction 1.png");
+    background-position: center;
+    background-size: cover;
+    display: -ms-grid;
+    display: grid;
+}
+
+#MojProfilSlikaOverlayKamera {
+    -ms-grid-column-align: center;
+    justify-self: center;
+    -ms-flex-item-align: center;
+    -ms-grid-row-align: center;
+    align-self: center;
+    width: 20%;
+}
+
+#MojProfilDetalji {
+    -ms-grid-column-align: left;
+    justify-self: left;
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: 20% 80%;
+    grid-template-columns: 20% 80%;
+    justify-items: left;
+    width: 70%;
+    font-family: Montserrat, "Open Sans", Helvetica, Arial, sans-serif;
+    font-size: 2vh;
+    row-gap: 3.6vh;
+}
+
+.MojProfilDetaljiNaslov {
+    width: 100%;
+}
+
+.MojProfilDetaljiText {
+    display: inline-block;
+    font-weight:700;
+    margin-left:3%;
+}
+
+.MojProfilDetaljiEdit {
+    display: inline-block;
+    margin-left: 1%;
+    height:1.8vh;
+}
+
+#MojProfilNarudzbeTabela {
+    display: -ms-grid;
+    display: grid;
+    width: 100%;
+    font-family: Montserrat, "Open Sans", Helvetica, Arial, sans-serif;
+    font-size: 2.3vh;
+}
+
+    #MojProfilNarudzbeTabela > :nth-child(even) {
+        background-color: #04090f;
+    }
+
+.MojProfilNarudzbeTabelaRed {
+    width: 100%;
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: 11% 11% 11% 11% 11% 11% 11% 11% 11%;
+    grid-template-columns: 11% 11% 11% 11% 11% 11% 11% 11% 11%;
+    justify-items: center;
+    padding: 1.5vh 0;
+}
+
+#MojProfilNarudzbeTabelaHeader {
+    font-weight: 700;
+    border-bottom: #DCDCDC 1px solid;
+}
+
+#MojProfilUpgradeDugme {
+    background-color: #9D1E31;
+    border: 0;
+    padding: 0.5vh 3vh;
+    margin-top: 0.5vh;
+    color:white;
+    font-size:2vh;
+    border-radius:3px;
+}
+
+.rating, .givenRating {
+    border: none;
+    float: left;
+}
+
+.rating > input { display: none; } 
+
+.rating > label:before, .givenRating > label:before { 
+  margin:0.25vh;
+  font-size: 2vh;
+  font-family: FontAwesome;
+  display: inline-block;
+  content: "\f005";
+}
+
+.rating > label, .givenRating > label { 
+  color: #ddd; 
+ float: right; 
+}
+
+#givenStar {
+    color: #9D1E31;
+}
+
+.rating > input:checked ~ label, /* show gold star when clicked */
+.rating:not(:checked) > label:hover, /* hover current star */
+.rating:not(:checked) > label:hover ~ label { color: #9D1E31;  } /* hover previous stars in list */
+
+.rating > input:checked + label:hover, /* hover current star when changing rating */
+.rating > input:checked ~ label:hover,
+.rating > label:hover ~ input:checked ~ label, /* lighten current selection */
+.rating > input:checked ~ label:hover ~ label { color: rgb(114, 24, 37);  }
+
+
+#NovostDetaljiWrapper {
+    padding: 2vh 0;
+    display: -ms-grid;
+    display: grid;
+    width: 100%;
+    -ms-grid-columns: 1fr;
+    grid-template-columns: 1fr;
+    justify-items: center;
+    row-gap: 2vh;
+}
+
+#NovostDetaljiSlika {
+    background-image: url("/images/Novost1_Image_A0_Rectangle_14_pattern.png");
+    background-size: cover;
+    width: 90%;
+    height: 35vh;
+}
+
+#NovostDetaljiNaslov {
+    font-size: 6vh;
+    font-family: Montserrat, "Open Sans", Helvetica, Arial, sans-serif;
+    letter-spacing: 0.05vw;
+    font-weight: 501;
+}
+
+#NovostDetaljiText {
+    width: 86%;
+    font-family: Montserrat, "Open Sans", Helvetica, Arial, sans-serif;
+    margin-bottom: 2vh;
+}
+
+.NovostDetaljiKomentar {
+    background: black;
+    padding: 2vh;
+    width: 70%;
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: 1fr 9fr;
+    grid-template-columns: 1fr 9fr;
+    font-family: Montserrat, "Open Sans", Helvetica, Arial, sans-serif;
+}
+
+.NovostDetaljiKomentarSlika {
+    border-radius: 100%;
+    height: 8vh;
+    -ms-flex-item-align: start;
+    -ms-grid-row-align: start;
+    align-self: start;
+    -ms-grid-column-align: center;
+    justify-self: center;
+}
+
+.NovostDetaljiKomentarDetalji {
+    display: -ms-grid;
+    display: grid;
+    row-gap: 1vh;
+    -ms-grid-columns: 1fr;
+    grid-template-columns: 1fr;
+    justify-items: start;
+    width: 100%;
+}
+
+#NovostDetaljiKomentarDetaljiInput {
+    background: #060f19;
+    color: #DCDCDC;
+    border: 1px solid #fafafa;
+    font-family: Montserrat;
+    width: 99%;
+    height: 10vh;
+    resize: none;
+    padding: 1%;
+}
+
+#NovostDetaljiKomentarDetaljiSubmit {
+    margin-top: 1.2vh;
+    float: right;
+    border: 0;
+    color: #DCDCDC;
+    background-color: #9D1E31;
+    padding: 0.6vh 2vh;
+    border-radius: 4%;
+}
+
+
+#OdabirAvataraWrapper {
+    top: 10vh;
+    left: 15%;
+    margin-left: 20%;
+    right: auto;
+    position: fixed;
+    width: 65%;
+    background: #030a13;
+    margin: auto;
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: 1fr;
+    grid-template-columns: 1fr;
+    padding: 8vh;
+    justify-items: center;
+    border: 3px white solid;
+}
+
+#OdabirAvataraContainer {
+    width: 100%;
+    margin: auto;
+    display: -ms-grid;
+    display: grid;
+    gap: 1vh;
+    justify-items: center;
+    -ms-grid-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+}
+
+.radio_item {
+    display: none !important;
+}
+
+.label_item {
+    opacity: 0.7;
+}
+
+    .label_item > img {
+        height: 10vh;
+    }
+
+.radio_item:checked + label {
+    opacity: 1;
+}
+
+#OdabirAvataraSubmit {
+    border: 0;
+    color: #DCDCDC;
+    background-color: #13BE13;
+    color: white;
+    font-size: 2vh;
+    padding: 0.6vh 2vh;
+    border-radius: 5px;
+}
+
+#NovostiWrapper {
+    display: -ms-grid;
+    display: grid;
+    width: 100%;
+    gap: 1vh;
+    padding: 1vh;
+    -ms-grid-columns: 1fr 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    height:80vh;
+}
+
+.Novost {
+    background-size: cover;
+    height: 39vh;
+}
+
+.NovostOverlay {
+    width: 100%;
+    height: 10vh;
+    margin-top: 28.25vh;
+    background: rgba(99, 102, 106, 0.65);
+    padding-top: 0.75vh;
+    display: -ms-grid;
+    display: grid;
+    justify-items: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    color: #ffffff;
+    font-weight: 700;
+    font-family: Montserrat, "Open Sans", Helvetica, Arial, sans-serif;
+    letter-spacing: 0.1vw;
+    font-size: 4vh;
+    text-align: center;
+    overflow: hidden;
+}
+
+#PageLister > ul {
+    width: 100%;
+    margin-top: 2vh;
+    text-align: center;
+}
+
+    #PageLister > ul > li {
+        list-style-type: none;
+        display: inline-block;
+        margin: 0 0.5vh;
+    }
+
+        #PageLister > ul > li > a {
+            background: #9D1E31;
+            padding: 1vh;
+            border-radius: 6px;
+            font-family: Montserrat, "Open Sans", Helvetica, Arial, sans-serif;
+            letter-spacing: 0.1vw;
+            font-size: 2vh;
+            text-align: center;
+            overflow: hidden;
+        }
+
+#NoviEmailWrapper {
+    top: 20vh;
+    left: 15%;
+    margin-left: 35%;
+    right: auto;
+    position: fixed;
+    width: 70%;
+    background: #030a13;
+    margin: auto;
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: 1fr;
+    grid-template-columns: 1fr;
+    padding: 2vh;
+    justify-items: center;
+    border: 3px white solid;
+    grid-gap:1vh;
+}
+
+
+#TerminiWrapper {
+    display: -ms-grid;
+    display: grid;
+    width: 100%;
+    gap: 6.5vh;
+    row-gap: 2.5vh;
+    padding: 2vh 0;
+    justify-items: center;
+    -ms-grid-columns: 1fr 1fr;
+    grid-template-columns: 1fr 1fr;
+}
+
+.Termin {
+    display: -ms-grid;
+    display: grid;
+    gap: 0.8vh;
+    background: black;
+    font-weight: 600;
+    font-family: Montserrat, "Open Sans", Helvetica, Arial, sans-serif;
+    font-size: 4vh;
+    letter-spacing: 0.15vw;
+    color: #DCDCDC;
+    width: 100%;
+    justify-items: center;
+    padding: 2vh;
+}
+
+.TerminDetalji {
+    width: 100%;
+    font-size: 3vh;
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: 1.35fr 2.5fr;
+    grid-template-columns: 1.35fr 2.5fr;
+}
+
+.TerminDetaljiGrad {
+    -ms-grid-column-align: end;
+    justify-self: end;
+}
+
+.TerminDetaljiDatum {
+    margin-left: 5%;
+    -ms-grid-column-align: start;
+    justify-self: start;
+}
+
+.Red {
+    background: #9D1E31;
+}
+
+.Green {
+    background: #13BE13;
+}
+
+.TerminDugme {
+    margin-top: 1vh;
+    font-size: 2vh;
+    letter-spacing: 0;
+    padding: 1vh 3vh;
+    border-radius: 5px;
+    color:white;
+}

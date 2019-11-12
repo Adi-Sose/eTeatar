@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="1928.129" height="1020" viewBox="0 0 1928.129 1020">
+  <defs>
+    <linearGradient id="linear-gradient" x1="0.5" x2="0.5" y2="1" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#c42338"/>
+      <stop offset="0" stop-color="#a01f32"/>
+      <stop offset="1" stop-color="#060f19"/>
+      <stop offset="1" stop-color="#62121c"/>
+    </linearGradient>
+  </defs>
+  <path id="Kalendar-Background" d="M-3.129,210.227,444.279,53.482,1925,0V1020H0Z" transform="translate(3.129)" fill="url(#linear-gradient)"/>
+</svg>

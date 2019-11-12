@@ -1,0 +1,25 @@
+﻿@{ViewData["Title"] = "eTeatar";}
+@model eTeatar.Web.ViewModels.Termini.IndexVM;
+
+@if (Model.IsLoggedIn) { Layout = "_LayoutAnonymus"; }
+else { Layout = "_LayoutLoggedIn"; }
+
+<div id="TerminiWrapper">
+
+    @foreach (var Termin in Model.Termini)
+    {
+        <div class="Termin">
+            <div class="TerminNaslov">@Termin.Predstava</div>
+            <div class="TerminDetalji">
+                <div class="TerminDetaljiGrad">@Termin.Grad,</div>
+                <div class="TerminDetaljiDatum">@Termin.Datum</div>
+            </div>
+                <div>(@Termin.Teatar)</div>
+            <div class="TerminDugme Green btn" onclick="Redirect('/Predstave/Detalji/@Termin.PredstavaId')">Detalji</div>
+            <div class="TerminDugme Red btn" onclick="Redirect('/Termini/Checkout/@Termin.TerminId')">Kupi Kartu</div>
+        </div>
+    }
+
+
+
+</div>

@@ -1,0 +1,27 @@
+﻿@{ 
+    Layout = "_LayoutLoginRegister";
+}
+
+@model eTeatar.Web.ViewModels.User.VerifikacijaBrojaVM
+
+<form asp-controller="User" asp-action="VerifikacijaBroja" method="POST">
+
+    <div id="LoginContentWrapper">
+        <div id="LoginContent">
+
+            <div style="text-align: center" class="btn" onclick="Redirect('/')">
+                <img id="LoginRegisterLogo" src="/images/Header-Logo-Image.svg">
+                <div id="LogineRegisterLogoText">eTeatar</div>
+            </div>
+            <div class="LoginContentDiv">
+                <input asp-for="VerifikacijskiBroj" class="LoginContentDivInput" type="text" placeholder="Verifikacijski broj">
+                <span asp-validation-for="VerifikacijskiBroj" class="LoginContentDivError"></span>
+            </div>
+
+           
+            <input id="LoginContentDugmeDivLogin" class="LoginContentDugmeDiv btn" style="border:0;" value="Verificiraj" type="submit">
+
+        </div>
+    </div>
+
+</form>

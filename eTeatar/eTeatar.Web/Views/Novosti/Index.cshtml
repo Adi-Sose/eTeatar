@@ -1,0 +1,23 @@
+﻿@{ViewData["Title"] = "Predstave";}
+@{ bool IsloggedIn = (bool)ViewData["IsLoggedIn"];}
+@*@model ReflectionIT.Mvc.Paging.PagingList<Obavijest>;
+    @addTagHelper *,ReflectionIT.Mvc.Paging*@
+
+@model List<Obavijest>
+
+@if (IsloggedIn) { Layout = "_LayoutAnonymus"; }
+else { Layout = "_LayoutLoggedIn"; }
+
+<div id="NovostiWrapper">
+    
+    @foreach (var Obavijest in Model)
+    {
+        <div class="Novost btn" style="background-image: url('/images/Novost1_Image_A0_Rectangle_14_pattern.png');" onclick="Redirect('/Novosti/Detalji/@Obavijest.Id')">
+            <div class="NovostOverlay">@Obavijest.Naslov</div>
+        </div>
+    }
+
+</div>
+<div id="PageLister">
+    @await this.Component.InvokeAsync("Pager", new { pagingList = this.Model })
+ </div>

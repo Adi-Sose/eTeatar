@@ -1,0 +1,97 @@
+﻿@{ViewData["Title"] = "Predstave";}
+@model eTeatar.Web.ViewModels.Predstave.IndexVM;
+
+@if (Model.IsLoggedIn) { Layout = "_LayoutAnonymus"; }
+else { Layout = "_LayoutLoggedIn"; }
+
+
+<div id="ContentGrid">
+
+    <div id="ContentLeft">
+
+        <form action="/Ajax/Predstave/Index" ajax-poziv="da" ajax-rezultat="ContentRight" method="post">
+            
+            <div id="ContentLeftSearchboxDiv">
+                <input asp-for="Search" id="ContentLeftSearchBox" type="text" placeholder="Pretraga">
+            </div>
+
+            <div id="ContentLeftZanrovi">
+
+                @for (int i = 0; i < Model.Zanrovi.Count(); i++)
+                {
+                    <div class="ContentLeftZanr">
+                        <div class="ContentLeftZanrNaslov">@Model.Zanrovi[i].Naziv</div>
+                        <input asp-for="@Model.Zanrovi[i].Oznacen" class="ContentLeftZanrInput" type="checkbox">
+                        <input asp-for="@Model.Zanrovi[i].Id" hidden>
+                        <input asp-for="@Model.Zanrovi[i].Naziv" hidden>
+                    </div>
+                }
+
+
+            </div>
+
+            @*<div id="ContentLeftMojGradDiv">
+                <div id="ContentLeftMojGrad">
+                    <div id="ContentLeftMojGradNaslov">Predstave u mom gradu</div>
+                    <input asp-for="PredstaveUMomGradu" id="ContentLeftMojGradInput" type="checkbox">
+                </div>
+            </div>*@
+
+
+            <div id="ContentLeftPredstavaRatingDiv">
+
+                <input class="ContentLeftPredstavaRatingRadio" type="radio" value="0" name="Rating" checked>
+
+                <label class="ContentLeftPredstavaRating">
+                    <input class="ContentLeftPredstavaRatingRadio" type="radio" value="1" name="Rating">
+                    <img class="ContentLeftPredstavaRatingImage" src="/images/1Star.svg">
+                    <div class="ContentLeftPredstavaRatingText">+</div>
+                </label>
+
+                <label class="ContentLeftPredstavaRating">
+                    <input class="ContentLeftPredstavaRatingRadio" type="radio" value="2" name="Rating">
+                    <img class="ContentLeftPredstavaRatingImage" src="/images/2Star.svg">
+                    <div class="ContentLeftPredstavaRatingText">+</div>
+                </label>
+
+                <label class="ContentLeftPredstavaRating">
+                    <input class="ContentLeftPredstavaRatingRadio" type="radio" value="3" name="Rating">
+                    <img class="ContentLeftPredstavaRatingImage" src="/images/3Star.svg">
+                    <div class="ContentLeftPredstavaRatingText">+</div>
+                </label>
+
+                <label class="ContentLeftPredstavaRating">
+                    <input class="ContentLeftPredstavaRatingRadio" type="radio" value="4" name="Rating">
+                    <img class="ContentLeftPredstavaRatingImage" src="/images/4Star.svg">
+                    <div class="ContentLeftPredstavaRatingText">+</div>
+                </label>
+
+                <label class="ContentLeftPredstavaRating">
+                    <input class="ContentLeftPredstavaRatingRadio" type="radio" value="5" name="Rating">
+                    <img class="ContentLeftPredstavaRatingImage" src="/images/5Star.svg">
+                </label>
+            </div>
+
+            <div id="ContentLeftPredstavaDugmeDiv">
+                <input type="submit" id="ContentLeftPredstavaDugme" value="Osvjezi pretragu" class="btn">
+            </div>
+
+        </form>
+    </div>
+
+    <div id="ContentRight"></div>
+
+    </div>
+
+<script>
+
+    function UcitajAjax() {
+        $.get("/Ajax/Predstave/Index",
+            function (rezultat) {
+                $("#ContentRight").html(rezultat);
+            });
+    }
+
+    $(document).ready(function(){ UcitajAjax() });
+
+</script>

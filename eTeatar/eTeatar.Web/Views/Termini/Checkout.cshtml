@@ -1,0 +1,106 @@
+﻿@{ViewData["Title"] = "eTeatar";}
+@model eTeatar.Web.ViewModels.Termini.CheckoutVM;
+
+@{
+    Layout = "_LayoutLoggedIn";
+}
+
+
+
+<style>
+    input[type="number"] {
+        -webkit-appearance: textfield;
+        -moz-appearance: textfield;
+        appearance: textfield;
+    }
+
+    input[type=number]::-webkit-inner-spin-button,
+    input[type=number]::-webkit-outer-spin-button {
+        -webkit-appearance: none;
+    }
+</style>
+
+
+<form id="Forma" action="/Termini/Checkout/Payment" method="post">
+    <div id="ContentTerminCheckoutWrapper">
+
+        <input type="hidden" asp-for="TerminId" />
+
+        <div class="ContentPredstavaTerminNaslov">
+
+            <div id="ContentTerminCheckoutNaslov">@Model.Predstava</div>
+
+            <div style="display:grid; width:100%; justify-items:center;">
+                <div class="ContentTerminCheckoutGornjiRed">
+                    <div class="ContentTerminCheckoutGrad">@Model.Grad, </div>
+                    <div class="ContentTerminCheckoutDatum"> @Model.Datum</div>
+                </div>
+
+                <div class="ContentTerminCheckoutTeatar">(@Model.Teatar, @Model.Dvorana)</div>
+            </div>
+        </div>
+
+        <div id="ContentTerminCheckoutInputContainer">
+            <div class="ContentTerminCheckoutInputDiv">
+                <div id="ContentTerminCheckoutInputDivNaslov">Tip Sjedista</div>
+                <select class="ContentTerminCheckoutInput" id="SelectorSjedista" asp-for="TipSjedistaId" asp-items="@Model.TipoviSjedista"></select>
+            </div>
+
+            <div class="ContentTerminCheckoutInputDiv">
+                <div id="ContentTerminCheckoutInputDivNaslov">Broj Karata</div>
+                <input class="ContentTerminCheckoutInput" id="BrojKarata" style="width:20%; text-align:center; color: transparent;text-shadow: 0 0 0 white;" min="1" asp-for="BrojKarata" type="number" onkeydown="return false">
+                <div id="ButtonsParent">
+                    <div class="btn stepupdown" onclick="BrojKarataDown()">-</div>
+                    <div class="btn stepupdown" onclick="BrojKarataUp()">+</div>
+                </div>
+                <span asp-validation-for="BrojKarata" class="ContentTerminCheckoutError"></span>
+            </div>
+        </div>
+
+
+        <div id="ContentTerminCheckoutFooter">
+
+            <div id="ContentTerminCheckoutCijena">
+                <div id="ContentTerminCheckoutCijenaLeft">Ukupna cijena: </div>
+                <div id="ContentTerminCheckoutCijenaRight">KM</div>
+            </div>
+
+            <div id="ContentTerminCheckoutDugmeDiv" class="btn" onclick="Submit()">
+                <div id="ContentTerminCheckoutDugme">
+                    <img src="/images/PayPal_logo_logotype_emblem.png" alt="">
+                </div>
+            </div>
+            
+        </div>
+    </div>
+
+</form>
+<script>
+
+    function UcitajAjax() {
+        $.get("/Ajax/Termini/Checkout?CijenaKarte=@Model.CijenaKarte&BrojKarata=" + $('#BrojKarata').val()+ "&TipSjedistaId=" + $('#SelectorSjedista').val() +"&TerminId=" + @Model.TerminId,
+            function (rezultat) {
+                $("#ContentTerminCheckoutCijena").html(rezultat);
+            });
+    }
+
+    $('#SelectorSjedista').change(function(){ UcitajAjax(); });
+
+    $(document).ready(function () { UcitajAjax() });
+
+    function BrojKarataDown() {
+        document.getElementById("BrojKarata").stepDown();
+        UcitajAjax();
+    }
+
+    function BrojKarataUp() {
+        document.getElementById("BrojKarata").stepUp();
+        UcitajAjax();
+    }
+
+
+    function Submit() {
+        document.getElementById("Forma").submit();
+    }
+
+</script>
